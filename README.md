@@ -21,3 +21,6 @@ To change something, edit the file in `src/`, run `./build.sh`, and commit both 
 These stay pasted directly in Zoho Header Code, not here:
 - the gclid fix, which must run before Zoho's own scripts
 - the Trustpilot verification tag
+
+## Backlog
+- Make the reassurance box a configurable, site-wide feature: general lines (delivery, VAT, contact) on every product, plus extra lines per product type (e.g. lead time and Sheerline guarantee for lanterns), driven by one settings block rather than code edits. (Keith, 6 Nov 2026)
