@@ -1,7 +1,7 @@
 # TekFab site scripts (public)
 
 Scripts for shop.tekfab.co.uk (Zoho Commerce), served by GitHub Pages at
-`https://turleyk.github.io/tekfab-site-scripts/site.js`.
+`https://scripts.tekfab.co.uk/site.js` (GitHub Pages, custom domain set in the `CNAME` file).
 
 Zoho's Header Code loads that file with one line, so changes go live by committing here.
 GitHub Pages updates within about 10 minutes. No Zoho publish is needed for these scripts.
