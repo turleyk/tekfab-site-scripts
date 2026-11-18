@@ -1,4 +1,4 @@
-/* TekFab site scripts for shop.tekfab.co.uk. Built 2026-11-06T16:56Z from src/. Do not edit site.js directly. */
+/* TekFab site scripts for shop.tekfab.co.uk. Built 2026-11-18T21:45Z from src/. Do not edit site.js directly. */
 (function () {
 
 // TekFab site scripts core helpers. Loaded from Zoho Commerce Header Code via GitHub Pages.
@@ -139,7 +139,7 @@ targetElement.parentNode.insertBefore(mobileFormWrapper, targetElement);
 });
 
 // Source: tekfab-website-code/header/04-size-notice-box.html
-TF.css(".size-notice-box {\nbackground-color: #f8fafc;\nborder: 2px solid #0284c7;\nborder-radius: 8px;\npadding: 14px 18px;\nmargin: 12px 0 16px 0;\nbox-shadow: 0 2px 4px rgba(0,0,0,0.05);\nfont-family: inherit;\n}\n.size-notice-breadcrumb {\nfont-size: 11px;\ntext-transform: uppercase;\nletter-spacing: 0.5px;\nfont-weight: 700;\ncolor: #64748b;\nmargin-bottom: 4px;\n}\n.size-notice-breadcrumb a {\ncolor: #0284c7 !important;\ntext-decoration: none !important;\n}\n.size-notice-breadcrumb a:hover {\ntext-decoration: underline !important;\n}\n.size-notice-title {\nfont-size: 14px;\nfont-weight: 700;\ncolor: #0f172a;\nmargin-bottom: 4px;\ndisplay: flex;\nalign-items: center;\ngap: 6px;\n}\n.size-notice-desc {\nfont-size: 12px;\ncolor: #475569;\nmargin-bottom: 8px;\nline-height: 1.35;\n}\n.size-notice-guide {\nbackground-color: #f1f5f9;\nborder-left: 3px solid #0284c7;\npadding: 6px 10px;\nmargin-bottom: 10px;\nfont-size: 11px;\ncolor: #334155;\nline-height: 1.35;\nborder-radius: 0 4px 4px 0;\n}\n.size-notice-btn {\ndisplay: block;\ntext-align: center;\nbackground-color: #0284c7;\ncolor: #ffffff !important;\nfont-weight: 600;\nfont-size: 13px;\npadding: 8px 12px;\nborder-radius: 5px;\ntext-decoration: none !important;\ntransition: background-color 0.2s;\n}\n.size-notice-btn:hover {\nbackground-color: #0369a1;\n}\n.size-notice-nav {\nmargin-top: 10px;\npadding-top: 8px;\nborder-top: 1px solid #e2e8f0;\nfont-size: 11px;\ncolor: #64748b;\nline-height: 1.4;\n}\n.size-notice-nav a {\ncolor: #0284c7 !important;\ntext-decoration: underline !important;\nfont-weight: 500;\n}\n.size-notice-nav a:hover {\ncolor: #0369a1 !important;\n}\n\n/* MOBILE-SPECIFIC OPTIMIZATIONS */\n@media (max-width: 600px) {\n.size-notice-box {\npadding: 10px 12px;\nmargin: 10px 0 14px 0;\n}\n.size-notice-title {\nfont-size: 13px;\n}\n.size-notice-desc {\nfont-size: 11px;\n}\n.size-notice-guide {\nfont-size: 11px;\npadding: 5px 8px;\nmargin-bottom: 8px;\n}\n.size-notice-btn {\nfont-size: 12px;\npadding: 7px 10px;\n}\n}");
+TF.css(".size-notice-box {\nbackground-color: #f8fafc;\nborder: 2px solid #0284c7;\nborder-radius: 8px;\npadding: 14px 18px;\nmargin: 12px 0 16px 0;\nbox-shadow: 0 2px 4px rgba(0,0,0,0.05);\nfont-family: inherit;\n}\n.size-notice-breadcrumb {\nfont-size: 11px;\ntext-transform: uppercase;\nletter-spacing: 0.5px;\nfont-weight: 700;\ncolor: #64748b;\nmargin-bottom: 4px;\n}\n.size-notice-breadcrumb a {\ncolor: #0284c7 !important;\ntext-decoration: none !important;\n}\n.size-notice-breadcrumb a:hover {\ntext-decoration: underline !important;\n}\n.size-notice-title {\nfont-size: 14px;\nfont-weight: 700;\ncolor: #0f172a;\nmargin-bottom: 4px;\ndisplay: flex;\nalign-items: center;\ngap: 6px;\n}\n.size-notice-desc {\nfont-size: 12px;\ncolor: #475569;\nmargin-bottom: 8px;\nline-height: 1.35;\n}\n.size-notice-guide {\nbackground-color: #f1f5f9;\nborder-left: 3px solid #0284c7;\npadding: 6px 10px;\nmargin-bottom: 10px;\nfont-size: 11px;\ncolor: #334155;\nline-height: 1.35;\nborder-radius: 0 4px 4px 0;\n}\n.size-notice-btn {\ndisplay: block;\ntext-align: center;\nbackground-color: #0284c7;\ncolor: #ffffff !important;\nfont-weight: 600;\nfont-size: 13px;\npadding: 8px 12px;\nborder-radius: 5px;\ntext-decoration: none !important;\ntransition: background-color 0.2s;\n}\n.size-notice-btn:hover {\nbackground-color: #0369a1;\n}\n.size-notice-quote {\nmargin-top: 10px;\npadding-top: 10px;\nborder-top: 1px solid #e2e8f0;\n}\n.size-notice-quote-title {\nfont-size: 13px;\nfont-weight: 700;\ncolor: #0f172a;\nmargin-bottom: 3px;\n}\n.size-notice-quote-desc {\nfont-size: 12px;\ncolor: #475569;\nmargin-bottom: 8px;\nline-height: 1.35;\n}\n.size-notice-btn-alt {\ndisplay: block;\ntext-align: center;\nbackground-color: #ffffff;\ncolor: #0284c7 !important;\nborder: 2px solid #0284c7;\nfont-weight: 600;\nfont-size: 13px;\npadding: 6px 12px;\nborder-radius: 5px;\ntext-decoration: none !important;\n}\n.size-notice-btn-alt:hover {\nbackground-color: #f0f9ff;\n}\n.size-notice-nav {\nmargin-top: 10px;\npadding-top: 8px;\nborder-top: 1px solid #e2e8f0;\nfont-size: 11px;\ncolor: #64748b;\nline-height: 1.4;\n}\n.size-notice-nav a {\ncolor: #0284c7 !important;\ntext-decoration: underline !important;\nfont-weight: 500;\n}\n.size-notice-nav a:hover {\ncolor: #0369a1 !important;\n}\n\n/* MOBILE-SPECIFIC OPTIMIZATIONS */\n@media (max-width: 600px) {\n.size-notice-box {\npadding: 10px 12px;\nmargin: 10px 0 14px 0;\n}\n.size-notice-title {\nfont-size: 13px;\n}\n.size-notice-desc {\nfont-size: 11px;\n}\n.size-notice-guide {\nfont-size: 11px;\npadding: 5px 8px;\nmargin-bottom: 8px;\n}\n.size-notice-btn {\nfont-size: 12px;\npadding: 7px 10px;\n}\n}");
 TF.ready(function() {
 if (document.querySelector('.size-notice-box')) { return; } // already added
 // Only evaluate logic if we are on a product page
@@ -194,6 +194,14 @@ styleName = "Pyramid Lanterns";
 styleDesc = "<strong>Pyramid Style:</strong> Designed specifically for perfectly square roof openings (equal length and width).";
 }
 
+// CUSTOM QUOTE LINK: pre-fill the quote form with this listing's size, read from the page address.
+var quoteUrl = "https://shop.tekfab.co.uk/roof-lantern-quote-v2";
+var sizeMatch = currentPath.match(/-(\d+(?:-\d+)?)m-x-(\d+(?:-\d+)?)m-/);
+if (sizeMatch) {
+var toMm = function (t) { return Math.round(parseFloat(t.replace('-', '.')) * 1000); };
+quoteUrl += "?width=" + toMm(sizeMatch[1]) + "&length=" + toMm(sizeMatch[2]);
+}
+
 // NOTICE BOX HTML TEMPLATE
 var bannerHTML = `
 <div class="size-notice-box">
@@ -218,6 +226,13 @@ ${styleDesc}
 <a href="${targetUrl}" class="size-notice-btn">
 ${buttonText}
 </a>
+
+<!-- Custom Quote -->
+<div class="size-notice-quote">
+<div class="size-notice-quote-title">Need an exact size? Get a custom quote</div>
+<div class="size-notice-quote-desc">Every lantern is made to order. If your roof opening isn't a standard size, tell us your measurements and we'll quote for a lantern made to fit.</div>
+<a href="${quoteUrl}" class="size-notice-btn-alt">Get a Custom Quote →</a>
+</div>
 
 <!-- Quick-Jump Cross Navigation -->
 <div class="size-notice-nav">
