@@ -1,4 +1,4 @@
-/* TekFab site scripts for shop.tekfab.co.uk. Built 2026-11-26T13:18Z from src/. Do not edit site.js directly. */
+/* TekFab site scripts for shop.tekfab.co.uk. Built 2026-11-26T13:26Z from src/. Do not edit site.js directly. */
 (function () {
 
 // TekFab site scripts core helpers. Loaded from Zoho Commerce Header Code via GitHub Pages.
@@ -525,9 +525,27 @@ TF.css(".tf-finder{max-width:1200px;margin:16px auto 20px;padding:0 15px;box-siz
     });
     return best;
   }
-  function typeParams() {
-    // Keep any Single/Double vented "Type" filter already applied.
-    return location.search.replace(/^\?/, '').split('&').filter(function (p) { return /^pf=.*_Type_/.test(p); });
+  function boxFor(id) { return document.querySelector('input.theme-product-filter-check[data-zs-filter-option-value-id="' + id + '"]'); }
+  // Zoho ignores ?pf= in the address on page load, so tick its own filter boxes instead.
+  function applyFilters(wid, lid, done) {
+    var steps = [];
+    document.querySelectorAll('input.theme-product-filter-check:checked').forEach(function (e) {
+      var v = e.getAttribute('data-zs-filter-option-value-id') || '';
+      if (/_(Width|Length)_%28mm%29_/.test(v) && v !== wid && v !== lid) { steps.push(e); }
+    });
+    [wid, lid].forEach(function (id) { var b = boxFor(id); if (b && !b.checked) { steps.push(b); } });
+    var i = 0;
+    (function next() {
+      if (i >= steps.length) {
+        var grid = document.querySelector('.theme-prod-box');
+        if (grid) { grid.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+        if (done) { done(); }
+        checkEmpty();
+        return;
+      }
+      steps[i++].click();
+      setTimeout(next, 1800);
+    })();
   }
 
   function find(w, l, out) {
@@ -544,13 +562,17 @@ TF.css(".tf-finder{max-width:1200px;margin:16px auto 20px;padding:0 15px;box-siz
       return;
     }
     var exact = nw === w && nl === l;
-    var pf = typeParams().concat(['pf=' + W[nw], 'pf=' + L[nl]]);
-    var view = location.pathname + '?' + pf.join('&');
-    try { sessionStorage.setItem('tfFinder', JSON.stringify({ w: w, l: l, nw: nw, nl: nl, p: location.pathname })); } catch (e) {}
+    last = { w: w, l: l };
     out.innerHTML = (exact
       ? '<strong>' + fmt(w) + ' x ' + fmt(l) + '</strong> is a listed size.'
       : 'Nearest listed size: <strong>' + fmt(nw) + ' x ' + fmt(nl) + '</strong>. If you need exactly ' + w + ' x ' + l + 'mm, ask for a quote.') +
-      '<br><a class="tf-btn-main" href="' + esc(view) + '">Show ' + fmt(nw) + ' x ' + fmt(nl) + ' lanterns</a>' + q;
+      '<br><a class="tf-btn-main" href="#" role="button">Show ' + fmt(nw) + ' x ' + fmt(nl) + ' lanterns</a>' + q;
+    out.querySelector('.tf-btn-main').addEventListener('click', function (ev) {
+      ev.preventDefault();
+      var btn = this;
+      btn.textContent = 'Filtering…';
+      applyFilters(W[nw], L[nl], function () { btn.textContent = 'Showing ' + fmt(nw) + ' x ' + fmt(nl) + ' below'; });
+    });
   }
 
   function sizesHtml() {
@@ -593,31 +615,30 @@ TF.css(".tf-finder{max-width:1200px;margin:16px auto 20px;padding:0 15px;box-siz
     return true;
   }
 
-  // After "Show ... lanterns": if that width/length combination has no listing in this style, say so.
+  // After filtering: if that width/length combination has no listing in this style, say so.
+  var last = null;
   function checkEmpty() {
-    if (!/[?&]pf=[^&]*_Width_/.test(location.search) || !/[?&]pf=[^&]*_Length_/.test(location.search)) { return; }
-    var f = null;
-    try { f = JSON.parse(sessionStorage.getItem('tfFinder') || 'null'); } catch (e) {}
     setTimeout(function () {
-      if (document.getElementById('tf-nores')) { return; }
+      var fb = document.getElementById('tf-finder');
+      var old = document.getElementById('tf-nores');
+      if (old) { old.parentNode.removeChild(old); }
       var grid = document.querySelector('.theme-prod-box');
-      if (grid && grid.querySelector('a[href*="/products/"]')) { return; }
-      var w = f && f.p === location.pathname ? f.w : '', l = f && f.p === location.pathname ? f.l : '';
+      if (!fb || (grid && grid.querySelector('a[href*="/products/"]'))) { return; }
       var n = document.createElement('div');
       n.id = 'tf-nores';
       n.className = 'tf-nores';
       n.innerHTML = 'That size isn’t listed in this style. Every lantern is made to order, so <a href="' +
-        esc(w && l ? quoteUrl(w, l) : QUOTE) + '">get a quote for your exact size</a>.';
-      var fb = document.getElementById('tf-finder');
-      if (fb) { fb.querySelector('.tf-finder-in').insertBefore(n, fb.querySelector('.tf-finder-in').firstChild); }
-    }, 3500);
+        esc(last ? quoteUrl(last.w, last.l) : QUOTE) + '">get a quote for your exact size</a>.';
+      var inner = fb.querySelector('.tf-finder-in');
+      inner.insertBefore(n, inner.firstChild);
+      fb.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 2500);
   }
 
   TF.ready(function () {
     if (!build()) {
       var tries = 0, iv = setInterval(function () { if (build() || ++tries > 20) { clearInterval(iv); } }, 300);
     }
-    checkEmpty();
   });
 })();
 })();
