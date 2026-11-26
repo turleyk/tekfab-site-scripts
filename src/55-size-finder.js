@@ -185,7 +185,6 @@ TF.css(".tf-finder{max-width:1200px;margin:16px auto 20px;padding:0 15px;box-siz
     var ids = W === L ? [W[nw]] : [W[nw], L[nl]];
     applyFilters(ids).then(function () {
       var n = productCount();
-      var box = document.getElementById('tf-finder');
       if (n > 0) {
         out.innerHTML = (exact
           ? 'Showing <strong>' + n + '</strong> lantern' + (n > 1 ? 's' : '') + ' at <strong>' + size + '</strong> below.'
@@ -197,12 +196,13 @@ TF.css(".tf-finder{max-width:1200px;margin:16px auto 20px;padding:0 15px;box-siz
           if (g) { g.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
         });
         uncover();
-        var g = document.querySelector('.theme-prod-box');
-        if (g) { g.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+        // Keep the result message in view, with the lanterns straight underneath it.
+        var top = out.getBoundingClientRect().top + window.pageYOffset - 12;
+        window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
       } else {
         uncover();
         out.innerHTML = '<span class="tf-nores-txt">' + size + ' isn’t listed in this style. Every lantern is made to order, so we can price your exact size.</span><br>' + q;
-        if (box) { box.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+        window.scrollTo({ top: Math.max(0, out.getBoundingClientRect().top + window.pageYOffset - 12), behavior: 'smooth' });
       }
     }).catch(function () {
       out.innerHTML = 'Something went wrong. Use the filters below, or get a quote.<br>' + q;
