@@ -34,7 +34,13 @@ TF.css(".tf-cat-seo{max-width:1100px;margin:40px auto 24px;padding:0 20px;font-f
         '<li><strong>25-year manufacturer guarantee:</strong> covering the aluminium profiles, the powder-coated finish and the thermal performance (gaskets 10 years).</li>' +
       '</ul>' +
       '<h3>Roof lantern sizes</h3>' +
-      '<p>The sizes we list are the <strong>external upstand (kerb) dimensions</strong> your lantern sits on, including any roof covering. They are not the size of the hole in the ceiling. Measure the outside of the upstand, width first and then length. If your size isn’t listed, <a href="' + QUOTE + '">ask for a custom quote</a>.</p>' +
+      '<p>The sizes we list are the <strong>external upstand (kerb) dimensions</strong> your lantern sits on, including any roof covering. They are not the size of the hole in the ceiling. Measure the outside of the upstand, width first and then length. If your size isn’t listed, <a href="' + QUOTE + '">ask for a custom quote</a>. Our <a href="/roof-lantern-sizes">roof lantern sizes guide</a> shows every size range we list.</p>' +
+      '<h3>Buying guides</h3><ul>' +
+        '<li><a href="/roof-lantern-sizes">Roof lantern sizes: how to measure</a></li>' +
+        '<li><a href="/vented-or-fixed-roof-lantern">Vented or fixed roof lantern: which do you need?</a></li>' +
+        '<li><a href="/roof-lantern-vs-skylight">Roof lantern or skylight: what\u2019s the difference?</a></li>' +
+        '<li><a href="/roof-lanterns-for-trade">Roof lanterns for builders and trade</a></li>' +
+      '</ul>' +
       '<h3>Frequently asked questions</h3>' + faq +
       '</section>';
   }
