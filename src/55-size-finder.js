@@ -3,7 +3,7 @@
 // to real product pages. Approved by Keith 26 Nov 2026 (KMP 4 A21Y-T33, A21Y-T34).
 // Replaces the older mobile-only quote box from 20-mobile-quote-widget.js on these pages.
 // Nothing in Zoho's own filters or navigation is changed.
-TF.css(".tf-finder{max-width:1200px;margin:16px auto 20px;padding:0 15px;box-sizing:border-box;font-family:inherit}\n.tf-finder-in{background:#f8fafc;border:1px solid #e2e8f0;border-top:4px solid #0284c7;border-radius:6px;padding:16px 18px;box-sizing:border-box}\n.tf-finder h2{font-size:17px;margin:0 0 4px;color:#0f172a;font-weight:700}\n.tf-finder p{font-size:13px;color:#475569;margin:0 0 10px;line-height:1.45}\n.tf-finder-row{display:flex;gap:10px;flex-wrap:wrap;align-items:flex-end}\n.tf-finder label{display:block;font-size:11px;font-weight:700;color:#64748b;text-transform:uppercase;margin-bottom:3px}\n.tf-finder input{width:130px;padding:8px;border:1px solid #cbd5e1;border-radius:4px;font-size:14px;color:#1e293b;background:#fff;box-sizing:border-box}\n.tf-finder button{background:#0284c7;color:#fff;border:0;border-radius:4px;padding:9px 16px;font-size:14px;font-weight:600;cursor:pointer}\n.tf-finder button:hover{background:#0369a1}\n.tf-finder-res{margin-top:10px;font-size:14px;color:#0f172a;line-height:1.5}\n.tf-finder-res:empty{display:none}\n.tf-finder-res a{display:inline-block;margin:6px 10px 0 0;padding:7px 12px;border-radius:4px;font-weight:600;font-size:13px;text-decoration:none !important}\n.tf-btn-main{background:#0284c7;color:#fff !important}\n.tf-btn-alt{background:#fff;color:#0284c7 !important;border:2px solid #0284c7;padding:5px 10px !important}\n.tf-finder-sizes{margin-top:14px;padding-top:12px;border-top:1px solid #e2e8f0}\n.tf-finder-sizes h3{font-size:13px;font-weight:700;color:#0f172a;margin:0 0 6px}\n.tf-finder-sizes ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px}\n.tf-finder-sizes li{margin:0}\n.tf-finder-sizes a{display:inline-block;padding:5px 10px;border:1px solid #cbd5e1;border-radius:16px;background:#fff;font-size:13px;color:#0369a1 !important;text-decoration:none !important}\n.tf-finder-sizes a:hover{border-color:#0284c7;background:#f0f9ff}\n.tf-finder-sizes .tf-grp{font-size:12px;color:#64748b;margin:8px 0 4px;font-weight:600}\n.tf-spin{display:inline-block;width:16px;height:16px;border:3px solid #bae6fd;border-top-color:#0284c7;border-radius:50%;vertical-align:-3px;margin-right:6px;animation:tfspin .8s linear infinite}\n@keyframes tfspin{to{transform:rotate(360deg)}}\n.tf-finder button:disabled{opacity:.6;cursor:wait}\n.tf-nores-txt{color:#9a3412;font-weight:600}\n.tf-nores{background:#fff7ed;border:1px solid #fdba74;border-radius:6px;padding:12px 14px;margin:0 0 14px;font-size:14px;color:#7c2d12}\n.tf-nores a{color:#0284c7 !important;font-weight:700}\n@media (max-width:600px){.tf-finder-in{padding:12px}.tf-finder input{width:100%}.tf-finder-row>div{flex:1 1 45%}.tf-finder button{width:100%}}");
+TF.css(".tf-finder{max-width:1200px;margin:16px auto 20px;padding:0 15px;box-sizing:border-box;font-family:inherit}\n.tf-finder-in{background:#f8fafc;border:1px solid #e2e8f0;border-top:4px solid #0284c7;border-radius:6px;padding:16px 18px;box-sizing:border-box}\n.tf-finder h2{font-size:17px;margin:0 0 4px;color:#0f172a;font-weight:700}\n.tf-finder p{font-size:13px;color:#475569;margin:0 0 10px;line-height:1.45}\n.tf-finder-row{display:flex;gap:10px;flex-wrap:wrap;align-items:flex-end}\n.tf-finder label{display:block;font-size:11px;font-weight:700;color:#64748b;text-transform:uppercase;margin-bottom:3px}\n.tf-finder input{width:130px;padding:8px;border:1px solid #cbd5e1;border-radius:4px;font-size:14px;color:#1e293b;background:#fff;box-sizing:border-box}\n.tf-finder button{background:#0284c7;color:#fff;border:0;border-radius:4px;padding:9px 16px;font-size:14px;font-weight:600;cursor:pointer}\n.tf-finder button:hover{background:#0369a1}\n.tf-finder-res{margin-top:10px;font-size:14px;color:#0f172a;line-height:1.5}\n.tf-finder-res:empty{display:none}\n.tf-finder-res a{display:inline-block;margin:6px 10px 0 0;padding:7px 12px;border-radius:4px;font-weight:600;font-size:13px;text-decoration:none !important}\n.tf-btn-main{background:#0284c7;color:#fff !important}\n.tf-btn-alt{background:#fff;color:#0284c7 !important;border:2px solid #0284c7;padding:5px 10px !important}\n.tf-finder-sizes{margin-top:14px;padding-top:12px;border-top:1px solid #e2e8f0}\n.tf-finder-sizes h3{font-size:13px;font-weight:700;color:#0f172a;margin:0 0 6px}\n.tf-finder-sizes ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px}\n.tf-finder-sizes li{margin:0}\n.tf-finder-sizes a{display:inline-block;padding:5px 10px;border:1px solid #cbd5e1;border-radius:16px;background:#fff;font-size:13px;color:#0369a1 !important;text-decoration:none !important}\n.tf-finder-sizes a:hover{border-color:#0284c7;background:#f0f9ff}\n.tf-finder-sizes .tf-grp{font-size:12px;color:#64748b;margin:8px 0 4px;font-weight:600}\n.tf-spin{display:inline-block;width:16px;height:16px;border:3px solid #bae6fd;border-top-color:#0284c7;border-radius:50%;vertical-align:-3px;margin-right:6px;animation:tfspin .8s linear infinite}\n@keyframes tfspin{to{transform:rotate(360deg)}}\n.tf-finder button:disabled{opacity:.6;cursor:wait}\n.tf-nores-txt{color:#9a3412;font-weight:600}\n.tf-ov{position:fixed;inset:0;z-index:2147483000;background:rgba(255,255,255,.82);display:flex;align-items:center;justify-content:center}\n.tf-ov-card{background:#fff;border:1px solid #e2e8f0;border-top:4px solid #0284c7;border-radius:8px;box-shadow:0 10px 30px rgba(15,23,42,.15);padding:22px 28px;font-size:16px;font-weight:600;color:#0f172a;text-align:center;max-width:80vw}\n.tf-ov-card .tf-spin{width:34px;height:34px;border-width:4px;display:block;margin:0 auto 12px}\n.tf-nores{background:#fff7ed;border:1px solid #fdba74;border-radius:6px;padding:12px 14px;margin:0 0 14px;font-size:14px;color:#7c2d12}\n.tf-nores a{color:#0284c7 !important;font-weight:700}\n@media (max-width:600px){.tf-finder-in{padding:12px}.tf-finder input{width:100%}.tf-finder-row>div{flex:1 1 45%}.tf-finder button{width:100%}}");
 (function () {
   var QUOTE = 'https://shop.tekfab.co.uk/roof-lantern-quote-v2';
   var P = '/products/alr-';
@@ -129,6 +129,27 @@ TF.css(".tf-finder{max-width:1200px;margin:16px auto 20px;padding:0 15px;box-siz
     return new Set(Array.prototype.map.call(document.querySelectorAll('.theme-prod-box a[href*="/products/"]'), function (a) { return a.getAttribute('href'); })).size;
   }
 
+  // Full-screen "Finding…" cover. Zoho jumps the page to the top on every filter click, so hold the
+  // scroll position still underneath until the results are ready.
+  var ov = null, pinY = 0;
+  function holdScroll() { if (ov) { window.scrollTo(0, pinY); } }
+  function cover(text) {
+    if (!ov) {
+      ov = document.createElement('div');
+      ov.className = 'tf-ov';
+      ov.setAttribute('role', 'status');
+      document.body.appendChild(ov);
+      pinY = window.pageYOffset;
+      window.addEventListener('scroll', holdScroll, { passive: true });
+    }
+    ov.innerHTML = '<div class="tf-ov-card"><span class="tf-spin" aria-hidden="true"></span>' + esc(text) + '</div>';
+  }
+  function uncover() {
+    window.removeEventListener('scroll', holdScroll);
+    if (ov && ov.parentNode) { ov.parentNode.removeChild(ov); }
+    ov = null;
+  }
+
   var busy = false;
   function find(w, l, out, btn) {
     if (busy) { return; }
@@ -155,6 +176,7 @@ TF.css(".tf-finder{max-width:1200px;margin:16px auto 20px;padding:0 15px;box-siz
     busy = true;
     btn.disabled = true;
     out.innerHTML = '<span class="tf-spin" aria-hidden="true"></span> Finding ' + size + ' lanterns…';
+    cover('Finding ' + size + ' lanterns…');
     if (sizeFiltered()) {
       try { sessionStorage.setItem('tfFinderNext', JSON.stringify({ w: w, l: l, p: location.pathname, t: Date.now() })); } catch (e) {}
       location.href = cleanUrl();
@@ -174,15 +196,17 @@ TF.css(".tf-finder{max-width:1200px;margin:16px auto 20px;padding:0 15px;box-siz
           var g = document.querySelector('.theme-prod-box');
           if (g) { g.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
         });
+        uncover();
         var g = document.querySelector('.theme-prod-box');
         if (g) { g.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
       } else {
+        uncover();
         out.innerHTML = '<span class="tf-nores-txt">' + size + ' isn’t listed in this style. Every lantern is made to order, so we can price your exact size.</span><br>' + q;
         if (box) { box.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
       }
     }).catch(function () {
       out.innerHTML = 'Something went wrong. Use the filters below, or get a quote.<br>' + q;
-    }).then(function () { busy = false; btn.disabled = false; });
+    }).then(function () { uncover(); busy = false; btn.disabled = false; });
   }
 
   function sizesHtml() {
@@ -227,6 +251,7 @@ TF.css(".tf-finder{max-width:1200px;margin:16px auto 20px;padding:0 15px;box-siz
       box.querySelector('#tf-fl').value = next.l;
       res.innerHTML = '<span class="tf-spin" aria-hidden="true"></span> Finding lanterns…';
       box.scrollIntoView({ block: 'start' });
+      cover('Finding lanterns…');
       setTimeout(function () { find(next.w, next.l, res, form.querySelector('button')); }, 2200);
     }
     form.addEventListener('submit', function (ev) {
