@@ -18,6 +18,7 @@ Nothing in this repo is secret. Business notes and history live in the private r
 | `src/45-basket-checkout.js` | On the basket, adds the reassurance box and a quote link under Checkout. At checkout, hides the coupon code box (no codes in use). |
 | `src/55-size-finder.js` | On the four lantern category pages, adds the "Find your lantern size" box (nearest listed size via the existing filters, or a pre-filled quote) and crawlable "Common sizes" links. Replaces the older mobile quote box there. |
 | `src/60-guide-pages.js` | Styles for the buying-guide pages and homepage intro block (classes starting `tfg-`). The content is real HTML in each page's code snippet; this file only styles it. |
+| `guides/*.html` | Source of the code snippet on each buying-guide page (the snippet holds a copy; edit here, then paste into the page). |
 | `src/50-category-roof-lanterns.js` | On the Roof Lanterns category page, adds the SEO section (intro, benefits, sizes, FAQ) under the products and FAQ structured data. |
 
 To change something, edit the file in `src/`, run `./build.sh`, and commit both `src/` and `site.js`.
