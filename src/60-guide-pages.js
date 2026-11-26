@@ -51,7 +51,7 @@ TF.css([
   '.tfg tr:nth-child(even) td{background:var(--soft)}',
   '.tfg td:first-child{font-weight:600}',
   '.tfg th,.tfg td{word-break:normal;overflow-wrap:normal;hyphens:none}',
-  '.tfg td:first-child{white-space:nowrap}',
+  '.tfg td:first-child:not(:has(a)){white-space:nowrap}',
   '.tfg-note{font-size:15px !important;color:var(--muted) !important;margin-top:14px !important}',
   '.tfg-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:0;background:var(--night);border-radius:16px;overflow:hidden}',
   '.tfg-stat{padding:30px 22px;text-align:center;border-left:1px solid rgba(255,255,255,.12)}',
