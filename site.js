@@ -1,4 +1,4 @@
-/* TekFab site scripts for shop.tekfab.co.uk. Built 2026-11-26T18:26Z from src/. Do not edit site.js directly. */
+/* TekFab site scripts for shop.tekfab.co.uk. Built 2026-11-26T18:27Z from src/. Do not edit site.js directly. */
 (function () {
 
 // TekFab site scripts core helpers. Loaded from Zoho Commerce Header Code via GitHub Pages.
@@ -768,6 +768,8 @@ TF.css([
   '.tfg td{padding:14px 18px;border-top:1px solid var(--line);vertical-align:top;text-align:left}',
   '.tfg tr:nth-child(even) td{background:var(--soft)}',
   '.tfg td:first-child{font-weight:600}',
+  '.tfg th,.tfg td{word-break:normal;overflow-wrap:normal;hyphens:none}',
+  '.tfg td:first-child{white-space:nowrap}',
   '.tfg-note{font-size:15px !important;color:var(--muted) !important;margin-top:14px !important}',
   '.tfg-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:0;background:var(--night);border-radius:16px;overflow:hidden}',
   '.tfg-stat{padding:30px 22px;text-align:center;border-left:1px solid rgba(255,255,255,.12)}',
