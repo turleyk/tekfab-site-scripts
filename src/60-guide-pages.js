@@ -91,5 +91,8 @@ TF.css([
   '.tfg-g2,.tfg-g3,.tfg-g4{grid-template-columns:1fr}.tfg-sec{padding:36px 0}.tfg-soft{padding:28px 20px;border-radius:12px}',
   '.tfg-hero{padding:48px 22px}.tfg-cta{padding:40px 22px}.tfg-btn{width:100%;text-align:center}.tfg th,.tfg td{padding:11px 12px;font-size:15px}.tfg-stat b{font-size:26px}}',
   // Let the page-builder container breathe and keep guide pages off the grey Zoho padding.
-  '.zpcontainer:has(> .zprow .tfg){max-width:1240px;margin-left:auto;margin-right:auto}'
+  '.zpcontainer:has(> .zprow .tfg){max-width:1240px;margin-left:auto;margin-right:auto}',
+  // Homepage: the intro snippet sits in a narrow centred column; let it use the full row and hide the emptied row below it.
+  '.zpelem-col:has(.tfg){flex:0 0 100% !important;max-width:100% !important}',
+  '.zpelem-col:has(.tfg) .zprow:not(:has(.zpelement)){display:none}'
 ].join('\n'));
