@@ -1,4 +1,4 @@
-/* TekFab site scripts for shop.tekfab.co.uk. Built 2026-11-26T18:12Z from src/. Do not edit site.js directly. */
+/* TekFab site scripts for shop.tekfab.co.uk. Built 2026-11-26T18:15Z from src/. Do not edit site.js directly. */
 (function () {
 
 // TekFab site scripts core helpers. Loaded from Zoho Commerce Header Code via GitHub Pages.
@@ -795,6 +795,10 @@ TF.css([
   '.tfg-bg-vented{background-image:url(https://feeds.tekfab.co.uk/images/lifestyle-vented.jpg)}',
   '.tfg-bg-interior{background-image:url(https://feeds.tekfab.co.uk/images/interior-s1-lantern.jpg)}',
   '.tfg-bg-pyramid{background-image:url(https://feeds.tekfab.co.uk/images/lifestyle-pyramid.jpg)}',
+  '.tfg-soft+.tfg-sec{border-top:0}',
+  '.tfg-media img.tfg-diagram,.tfg img.tfg-diagram{width:auto;max-width:100%;max-height:440px;margin:0 auto;box-shadow:none;border:1px solid var(--line);background:#fff;padding:18px;border-radius:12px}',
+  '.tfg img.tfg-diagram-sm{max-width:300px;width:100%;margin:18px 0 0;border:1px solid var(--line);padding:12px;border-radius:10px;box-shadow:none}',
+  '.tfg-hero-img img{aspect-ratio:4/3;object-fit:cover}',
   '@media (max-width:900px){.tfg-split,.tfg-g3,.tfg-g4{grid-template-columns:1fr 1fr}.tfg-split{grid-template-columns:1fr;gap:28px}.tfg-split .tfg-media{order:-1}.tfg-stats{grid-template-columns:1fr 1fr}.tfg-stat:nth-child(3){border-left:0}.tfg-stat{border-top:1px solid rgba(255,255,255,.12)}}',
   '@media (max-width:600px){.tfg{font-size:16px}.tfg h1{font-size:30px}.tfg h2{font-size:24px}.tfg p{font-size:16px}.tfg-lead{font-size:17px !important}',
   '.tfg-g2,.tfg-g3,.tfg-g4{grid-template-columns:1fr}.tfg-sec{padding:36px 0}.tfg-soft{padding:28px 20px;border-radius:12px}',
