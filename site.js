@@ -1,4 +1,4 @@
-/* TekFab site scripts for shop.tekfab.co.uk. Built 2026-11-26T17:27Z from src/. Do not edit site.js directly. */
+/* TekFab site scripts for shop.tekfab.co.uk. Built 2026-11-26T18:12Z from src/. Do not edit site.js directly. */
 (function () {
 
 // TekFab site scripts core helpers. Loaded from Zoho Commerce Header Code via GitHub Pages.
@@ -715,4 +715,91 @@ TF.css(".tf-finder{max-width:1200px;margin:16px auto 20px;padding:0 15px;box-siz
     }
   });
 })();
+
+// Design styles for the guide pages and the homepage intro block. The content itself is real page HTML
+// (built in the Zoho page builder's text code view, class names starting tfg-), so crawlers read it
+// without this script; this only styles it. Keith approved the redesign 26 Nov 2026 (KMP 4).
+TF.css([
+  '.tfg{--ink:#1f2933;--muted:#52606d;--line:#e4e7eb;--soft:#f5f7f9;--brand:#0284c7;--dark:#3d4236;--night:#14181d;',
+  'max-width:1140px;margin:0 auto;font-family:inherit;color:var(--ink);font-size:17px;line-height:1.65;text-align:left}',
+  '.tfg *{box-sizing:border-box}',
+  '.tfg p{margin:0 0 14px;font-size:17px;line-height:1.65;color:var(--ink);text-align:left}',
+  '.tfg h1,.tfg h2,.tfg h3{font-family:inherit;color:var(--night);text-align:left;margin:0 0 14px;letter-spacing:-.01em}',
+  '.tfg h1{font-size:40px;line-height:1.15;font-weight:600}',
+  '.tfg h2{font-size:30px;line-height:1.2;font-weight:600}',
+  '.tfg h3{font-size:20px;line-height:1.3;font-weight:600}',
+  '.tfg a{color:var(--brand)}',
+  '.tfg img{max-width:100%;height:auto;display:block;border-radius:10px}',
+  '.tfg-eyebrow{display:inline-block;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--brand);margin:0 0 10px}',
+  '.tfg-lead{font-size:19px !important;color:var(--muted) !important}',
+  '.tfg-sec{padding:56px 0;border-top:1px solid var(--line)}',
+  '.tfg-sec:first-child{border-top:0;padding-top:28px}',
+  '.tfg-soft{background:var(--soft);border:0;border-radius:16px;padding:48px 44px;margin:8px 0}',
+  '.tfg-split{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}',
+  '.tfg-split.tfg-rev .tfg-media{order:-1}',
+  '.tfg-media img{width:100%;box-shadow:0 14px 40px rgba(15,23,42,.14)}',
+  '.tfg-btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}',
+  '.tfg-btn{display:inline-block;padding:13px 24px;border-radius:6px;font-weight:600;font-size:16px;text-decoration:none !important;line-height:1.2;border:2px solid var(--dark);transition:all .15s}',
+  '.tfg-btn-p{background:var(--dark);color:#fff !important}',
+  '.tfg-btn-p:hover{background:#2a2e25;border-color:#2a2e25}',
+  '.tfg-btn-s{background:transparent;color:var(--dark) !important}',
+  '.tfg-btn-s:hover{background:var(--dark);color:#fff !important}',
+  '.tfg-btn-w{background:#fff;color:var(--night) !important;border-color:#fff}',
+  '.tfg-btn-o{background:transparent;color:#fff !important;border-color:rgba(255,255,255,.8)}',
+  '.tfg-head{max-width:720px;margin:0 0 30px}',
+  '.tfg-grid{display:grid;gap:22px}',
+  '.tfg-g2{grid-template-columns:repeat(2,1fr)}',
+  '.tfg-g3{grid-template-columns:repeat(3,1fr)}',
+  '.tfg-g4{grid-template-columns:repeat(4,1fr)}',
+  '.tfg-card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:26px;box-shadow:0 2px 6px rgba(15,23,42,.04)}',
+  '.tfg-card h3{margin-bottom:8px}',
+  '.tfg-card p{font-size:16px;color:var(--muted);margin:0}',
+  '.tfg-card-img{padding:0;overflow:hidden}',
+  '.tfg-card-img img{border-radius:0;width:100%;aspect-ratio:16/10;object-fit:cover}',
+  '.tfg-card-img .tfg-card-body{padding:22px 24px 26px}',
+  '.tfg-card-img .tfg-btns{margin-top:16px}',
+  '.tfg-num{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;background:var(--brand);color:#fff;font-weight:700;font-size:18px;margin-bottom:14px}',
+  '.tfg-list{margin:0 0 6px;padding:0;list-style:none}',
+  '.tfg-list li{position:relative;padding:0 0 10px 30px;font-size:16px;color:var(--ink)}',
+  '.tfg-list li:before{content:"";position:absolute;left:4px;top:7px;width:14px;height:8px;border-left:3px solid var(--brand);border-bottom:3px solid var(--brand);transform:rotate(-45deg)}',
+  '.tfg-table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:#fff}',
+  '.tfg table{width:100%;border-collapse:collapse;font-size:16px;margin:0}',
+  '.tfg th{background:var(--night);color:#fff;text-align:left;font-weight:600;padding:14px 18px}',
+  '.tfg td{padding:14px 18px;border-top:1px solid var(--line);vertical-align:top;text-align:left}',
+  '.tfg tr:nth-child(even) td{background:var(--soft)}',
+  '.tfg td:first-child{font-weight:600}',
+  '.tfg-note{font-size:15px !important;color:var(--muted) !important;margin-top:14px !important}',
+  '.tfg-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:0;background:var(--night);border-radius:16px;overflow:hidden}',
+  '.tfg-stat{padding:30px 22px;text-align:center;border-left:1px solid rgba(255,255,255,.12)}',
+  '.tfg-stat:first-child{border-left:0}',
+  '.tfg-stat b{display:block;font-size:32px;line-height:1.1;color:#fff;font-weight:700;margin-bottom:6px}',
+  '.tfg-stat span{display:block;font-size:14px;color:#cbd2d9;line-height:1.4}',
+  '.tfg-cta{position:relative;border-radius:16px;overflow:hidden;padding:60px 48px;margin:56px 0 24px;background:var(--night) center/cover no-repeat;color:#fff;text-align:center}',
+  '.tfg-cta:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(15,20,26,.92),rgba(15,20,26,.7))}',
+  '.tfg-cta>*{position:relative}',
+  '.tfg-cta h2{color:#fff;text-align:center;margin-bottom:10px}',
+  '.tfg-cta p{color:#e4e7eb;text-align:center;max-width:640px;margin:0 auto 6px;font-size:18px}',
+  '.tfg-cta .tfg-btns{justify-content:center}',
+  '.tfg-hero{position:relative;border-radius:16px;overflow:hidden;padding:90px 56px;background:var(--night) center/cover no-repeat;margin:20px 0 8px}',
+  '.tfg-hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(15,20,26,.9) 0%,rgba(15,20,26,.55) 60%,rgba(15,20,26,.25) 100%)}',
+  '.tfg-hero>*{position:relative;max-width:620px}',
+  '.tfg-hero h1{color:#fff}',
+  '.tfg-hero p{color:#e4e7eb}',
+  '.tfg-hero .tfg-eyebrow{color:#7dd3fc}',
+  '.tfg-links{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:8px}',
+  '.tfg-links a{display:inline-block;padding:9px 16px;border:1px solid var(--line);border-radius:999px;background:#fff;font-size:15px;color:var(--night) !important;text-decoration:none !important}',
+  '.tfg-links a:hover{border-color:var(--brand);color:var(--brand) !important}',
+  '.tfg-center{text-align:center}',
+  '.tfg-center h2,.tfg-center p{text-align:center;margin-left:auto;margin-right:auto}',
+  '.tfg-bg-ridged{background-image:url(https://feeds.tekfab.co.uk/images/lifestyle-ridged.jpg)}',
+  '.tfg-bg-vented{background-image:url(https://feeds.tekfab.co.uk/images/lifestyle-vented.jpg)}',
+  '.tfg-bg-interior{background-image:url(https://feeds.tekfab.co.uk/images/interior-s1-lantern.jpg)}',
+  '.tfg-bg-pyramid{background-image:url(https://feeds.tekfab.co.uk/images/lifestyle-pyramid.jpg)}',
+  '@media (max-width:900px){.tfg-split,.tfg-g3,.tfg-g4{grid-template-columns:1fr 1fr}.tfg-split{grid-template-columns:1fr;gap:28px}.tfg-split .tfg-media{order:-1}.tfg-stats{grid-template-columns:1fr 1fr}.tfg-stat:nth-child(3){border-left:0}.tfg-stat{border-top:1px solid rgba(255,255,255,.12)}}',
+  '@media (max-width:600px){.tfg{font-size:16px}.tfg h1{font-size:30px}.tfg h2{font-size:24px}.tfg p{font-size:16px}.tfg-lead{font-size:17px !important}',
+  '.tfg-g2,.tfg-g3,.tfg-g4{grid-template-columns:1fr}.tfg-sec{padding:36px 0}.tfg-soft{padding:28px 20px;border-radius:12px}',
+  '.tfg-hero{padding:48px 22px}.tfg-cta{padding:40px 22px}.tfg-btn{width:100%;text-align:center}.tfg th,.tfg td{padding:11px 12px;font-size:15px}.tfg-stat b{font-size:26px}}',
+  // Let the page-builder container breathe and keep guide pages off the grey Zoho padding.
+  '.zpcontainer:has(> .zprow .tfg){max-width:1240px;margin-left:auto;margin-right:auto}'
+].join('\n'));
 })();
