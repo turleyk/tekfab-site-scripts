@@ -78,6 +78,8 @@ TF.css([
   '.tfg-bg-interior{background-image:url(https://feeds.tekfab.co.uk/images/interior-s1-lantern.jpg)}',
   '.tfg-bg-pyramid{background-image:url(https://feeds.tekfab.co.uk/images/lifestyle-pyramid.jpg)}',
   '.tfg-soft+.tfg-sec{border-top:0}',
+  '.tfg-stats{margin:8px 0}',
+  '.tfg-stats+.tfg-sec{border-top:0}',
   '.tfg-media img.tfg-diagram,.tfg img.tfg-diagram{width:auto;max-width:100%;max-height:440px;margin:0 auto;box-shadow:none;border:1px solid var(--line);background:#fff;padding:18px;border-radius:12px}',
   '.tfg img.tfg-diagram-sm{max-width:300px;width:100%;margin:18px 0 0;border:1px solid var(--line);padding:12px;border-radius:10px;box-shadow:none}',
   '.tfg-hero-img img{aspect-ratio:4/3;object-fit:cover}',
