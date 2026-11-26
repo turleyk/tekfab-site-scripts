@@ -114,6 +114,13 @@ TF.css(".tf-finder{max-width:1200px;margin:16px auto 20px;padding:0 15px;box-siz
     }
     if (page.style !== 'pyramid' && w > l) { var t = w; w = l; l = t; }
     var W = options('Width'), L = options('Length');
+    if (page.style === 'pyramid') {
+      if (Math.abs(w - l) > 150) {
+        out.innerHTML = 'Pyramid lanterns are square. For a rectangular opening, see our <a class="tf-btn-main" href="/categories/ridged-lanterns/1565765000052482103">ridged lanterns</a>' + '<a class="tf-btn-alt" href="' + esc(quoteUrl(w, l)) + '">Get a quote for ' + w + ' x ' + l + 'mm</a>';
+        return;
+      }
+      if (!Object.keys(L).length) { L = W; }
+    }
     var nw = nearest(W, w), nl = nearest(L, l);
     var q = '<a class="tf-btn-alt" href="' + esc(quoteUrl(w, l)) + '">Get a quote for ' + w + ' x ' + l + 'mm</a>';
     if (nw === null || nl === null) {
