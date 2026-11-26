@@ -1,4 +1,4 @@
-/* TekFab site scripts for shop.tekfab.co.uk. Built 2026-11-26T16:24Z from src/. Do not edit site.js directly. */
+/* TekFab site scripts for shop.tekfab.co.uk. Built 2026-11-26T16:26Z from src/. Do not edit site.js directly. */
 (function () {
 
 // TekFab site scripts core helpers. Loaded from Zoho Commerce Header Code via GitHub Pages.
@@ -544,26 +544,27 @@ TF.css(".tf-finder{max-width:1200px;margin:16px auto 20px;padding:0 15px;box-siz
     })();
   }
   function clickBox(b) { var k = gridKey(); b.click(); return settle(k, 4000); }
-  // Zoho ignores width/length in the address on page load, so tick its own filter boxes instead:
-  // first untick any other width/length, then tick the wanted ones (they reappear once unticked).
+  // Tick Zoho's own filter boxes (it ignores width/length in the address on page load).
+  // Zoho doesn't show applied boxes as ticked, so this is only used on a page with no size filter applied.
   function applyFilters(ids) {
     var p = Promise.resolve();
-    document.querySelectorAll('input.theme-product-filter-check:checked').forEach(function (e) {
-      var v = e.getAttribute('data-zs-filter-option-value-id') || '';
-      if (/_(Width|Length)_%28mm%29_/.test(v) && ids.indexOf(v) < 0) { p = p.then(function () { var b = boxFor(v); return b && b.checked ? clickBox(b) : null; }); }
-    });
     ids.forEach(function (id) {
       p = p.then(function () {
         var tries = 0;
         return (function tick() {
           var b = boxFor(id);
-          if (b) { return b.checked ? null : clickBox(b); }
+          if (b) { return clickBox(b); }
           if (++tries > 12) { return null; }
           return wait(300).then(tick);
         })();
       });
     });
     return p.then(function () { return wait(400); });
+  }
+  function sizeFiltered() { return /[?&]pf=[^&]*_(Width|Length)_/.test(location.search); }
+  function cleanUrl() {
+    var keep = location.search.replace(/^\?/, '').split('&').filter(function (x) { return x && !/_(Width|Length)_/.test(x); });
+    return location.pathname + (keep.length ? '?' + keep.join('&') : '');
   }
   function productCount() {
     return new Set(Array.prototype.map.call(document.querySelectorAll('.theme-prod-box a[href*="/products/"]'), function (a) { return a.getAttribute('href'); })).size;
@@ -595,13 +596,18 @@ TF.css(".tf-finder{max-width:1200px;margin:16px auto 20px;padding:0 15px;box-siz
     busy = true;
     btn.disabled = true;
     out.innerHTML = '<span class="tf-spin" aria-hidden="true"></span> Finding ' + size + ' lanterns…';
+    if (sizeFiltered()) {
+      try { sessionStorage.setItem('tfFinderNext', JSON.stringify({ w: w, l: l, p: location.pathname, t: Date.now() })); } catch (e) {}
+      location.href = cleanUrl();
+      return;
+    }
     var ids = W === L ? [W[nw]] : [W[nw], L[nl]];
     applyFilters(ids).then(function () {
       var n = productCount();
       var box = document.getElementById('tf-finder');
       if (n > 0) {
         out.innerHTML = (exact
-          ? 'Showing <strong>' + n + '</strong> ' + size + ' lantern' + (n > 1 ? 's' : '') + ' below.'
+          ? 'Showing <strong>' + n + '</strong> lantern' + (n > 1 ? 's' : '') + ' at <strong>' + size + '</strong> below.'
           : 'Showing <strong>' + n + '</strong> lantern' + (n > 1 ? 's' : '') + ' at <strong>' + size + '</strong>, the nearest listed size to ' + w + ' x ' + l + 'mm. Need it exact? Get a quote.') +
           '<br><a class="tf-btn-main tf-jump" href="#">View lanterns ↓</a>' + q;
         out.querySelector('.tf-jump').addEventListener('click', function (ev) {
@@ -655,6 +661,15 @@ TF.css(".tf-finder{max-width:1200px;margin:16px auto 20px;padding:0 15px;box-siz
     var form = box.querySelector('form'), res = box.querySelector('.tf-finder-res');
     options('Width'); options('Length');
     setTimeout(function () { options('Width'); options('Length'); }, 1500);
+    var next = null;
+    try { next = JSON.parse(sessionStorage.getItem('tfFinderNext') || 'null'); sessionStorage.removeItem('tfFinderNext'); } catch (e) {}
+    if (next && next.p === location.pathname && Date.now() - next.t < 60000 && !sizeFiltered()) {
+      box.querySelector('#tf-fw').value = next.w;
+      box.querySelector('#tf-fl').value = next.l;
+      res.innerHTML = '<span class="tf-spin" aria-hidden="true"></span> Finding lanterns…';
+      box.scrollIntoView({ block: 'start' });
+      setTimeout(function () { find(next.w, next.l, res, form.querySelector('button')); }, 2200);
+    }
     form.addEventListener('submit', function (ev) {
       ev.preventDefault();
       find(Math.round(+box.querySelector('#tf-fw').value), Math.round(+box.querySelector('#tf-fl').value), res, form.querySelector('button'));
