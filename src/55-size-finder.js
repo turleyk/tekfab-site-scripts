@@ -92,7 +92,7 @@ TF.css(".tf-finder{max-width:1200px;margin:16px auto 20px;padding:0 15px;box-siz
       var v = e.getAttribute('data-zs-filter-option-value-id') || '';
       if (/_(Width|Length)_%28mm%29_/.test(v) && v !== wid && v !== lid) { steps.push(e); }
     });
-    [wid, lid].forEach(function (id) { var b = boxFor(id); if (b && !b.checked) { steps.push(b); } });
+    (wid === lid ? [wid] : [wid, lid]).forEach(function (id) { var b = boxFor(id); if (b && !b.checked) { steps.push(b); } });
     var i = 0;
     (function next() {
       if (i >= steps.length) {

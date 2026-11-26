@@ -1,4 +1,4 @@
-/* TekFab site scripts for shop.tekfab.co.uk. Built 2026-11-26T13:27Z from src/. Do not edit site.js directly. */
+/* TekFab site scripts for shop.tekfab.co.uk. Built 2026-11-26T13:28Z from src/. Do not edit site.js directly. */
 (function () {
 
 // TekFab site scripts core helpers. Loaded from Zoho Commerce Header Code via GitHub Pages.
@@ -533,7 +533,7 @@ TF.css(".tf-finder{max-width:1200px;margin:16px auto 20px;padding:0 15px;box-siz
       var v = e.getAttribute('data-zs-filter-option-value-id') || '';
       if (/_(Width|Length)_%28mm%29_/.test(v) && v !== wid && v !== lid) { steps.push(e); }
     });
-    [wid, lid].forEach(function (id) { var b = boxFor(id); if (b && !b.checked) { steps.push(b); } });
+    (wid === lid ? [wid] : [wid, lid]).forEach(function (id) { var b = boxFor(id); if (b && !b.checked) { steps.push(b); } });
     var i = 0;
     (function next() {
       if (i >= steps.length) {
