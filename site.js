@@ -1,4 +1,4 @@
-/* TekFab site scripts for shop.tekfab.co.uk. Built 2026-11-26T18:17Z from src/. Do not edit site.js directly. */
+/* TekFab site scripts for shop.tekfab.co.uk. Built 2026-11-26T18:24Z from src/. Do not edit site.js directly. */
 (function () {
 
 // TekFab site scripts core helpers. Loaded from Zoho Commerce Header Code via GitHub Pages.
@@ -797,6 +797,8 @@ TF.css([
   '.tfg-bg-pyramid{background-image:url(https://feeds.tekfab.co.uk/images/lifestyle-pyramid.jpg)}',
   '.tfg-soft+.tfg-sec{border-top:0}',
   '.tfg-stats{margin:8px 0}',
+  '.tfg-hero+.tfg-sec{border-top:0}',
+  '.tfg-hero .tfg-lead,.tfg-cta .tfg-lead{color:#e4e7eb !important}',
   '.tfg-stats+.tfg-sec{border-top:0}',
   '.tfg-media img.tfg-diagram,.tfg img.tfg-diagram{width:auto;max-width:100%;max-height:440px;margin:0 auto;box-shadow:none;border:1px solid var(--line);background:#fff;padding:18px;border-radius:12px}',
   '.tfg img.tfg-diagram-sm{max-width:300px;width:100%;margin:18px 0 0;border:1px solid var(--line);padding:12px;border-radius:10px;box-shadow:none}',
