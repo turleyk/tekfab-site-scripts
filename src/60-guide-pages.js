@@ -72,6 +72,7 @@ TF.css([
   '.tfg-links a{display:inline-block;padding:9px 16px;border:1px solid var(--line);border-radius:999px;background:#fff;font-size:15px;color:var(--night) !important;text-decoration:none !important}',
   '.tfg-links a:hover{border-color:var(--brand);color:var(--brand) !important}',
   '.tfg-center{text-align:center}',
+  '.tfg p.tfg-center{text-align:center !important;margin-top:18px}',
   '.tfg-center h2,.tfg-center p{text-align:center;margin-left:auto;margin-right:auto}',
   '.tfg-bg-ridged{background-image:url(https://feeds.tekfab.co.uk/images/lifestyle-ridged.jpg)}',
   '.tfg-bg-vented{background-image:url(https://feeds.tekfab.co.uk/images/lifestyle-vented.jpg)}',
