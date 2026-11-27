@@ -7,6 +7,7 @@ Zoho's Header Code loads that file with one line, so changes go live by committi
 GitHub Pages updates within about 10 minutes. No Zoho publish is needed for these scripts.
 
 Nothing in this repo is secret. Business notes and history live in the private repo `tekfab-website-code`.
+The maintenance rules (who approves, how changes are logged and tested, change log) are in that repo's `MAINTENANCE.md`.
 
 | File | What it does |
 |------|--------------|
