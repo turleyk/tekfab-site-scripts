@@ -1,4 +1,4 @@
-/* TekFab site scripts for shop.tekfab.co.uk. Built 2026-11-26T18:27Z from src/. Do not edit site.js directly. */
+/* TekFab site scripts for shop.tekfab.co.uk. Built 2026-11-27T14:18Z from src/. Do not edit site.js directly. */
 (function () {
 
 // TekFab site scripts core helpers. Loaded from Zoho Commerce Header Code via GitHub Pages.
@@ -450,7 +450,8 @@ TF.css(".tf-cat-seo{max-width:1100px;margin:40px auto 24px;padding:0 20px;font-f
 // to real product pages. Approved by Keith 26 Nov 2026 (KMP 4 A21Y-T33, A21Y-T34).
 // Replaces the older mobile-only quote box from 20-mobile-quote-widget.js on these pages.
 // Nothing in Zoho's own filters or navigation is changed.
-TF.css(".tf-finder{max-width:1200px;margin:16px auto 20px;padding:0 15px;box-sizing:border-box;font-family:inherit}\n.tf-finder-in{background:#f8fafc;border:1px solid #e2e8f0;border-top:4px solid #0284c7;border-radius:6px;padding:16px 18px;box-sizing:border-box}\n.tf-finder h2{font-size:17px;margin:0 0 4px;color:#0f172a;font-weight:700}\n.tf-finder p{font-size:13px;color:#475569;margin:0 0 10px;line-height:1.45}\n.tf-finder-row{display:flex;gap:10px;flex-wrap:wrap;align-items:flex-end}\n.tf-finder label{display:block;font-size:11px;font-weight:700;color:#64748b;text-transform:uppercase;margin-bottom:3px}\n.tf-finder input{width:130px;padding:8px;border:1px solid #cbd5e1;border-radius:4px;font-size:14px;color:#1e293b;background:#fff;box-sizing:border-box}\n.tf-finder button{background:#0284c7;color:#fff;border:0;border-radius:4px;padding:9px 16px;font-size:14px;font-weight:600;cursor:pointer}\n.tf-finder button:hover{background:#0369a1}\n.tf-finder-res{margin-top:12px;padding-top:10px;border-top:1px solid #e2e8f0;font-size:14px;color:#0f172a;line-height:1.5}\n.tf-finder-res:empty{display:none}\n.tf-finder-res a{display:inline-block;margin:6px 10px 0 0;padding:7px 12px;border-radius:4px;font-weight:600;font-size:13px;text-decoration:none !important}\n.tf-btn-main{background:#0284c7;color:#fff !important}\n.tf-btn-alt{background:#fff;color:#0284c7 !important;border:2px solid #0284c7;padding:5px 10px !important}\n.tf-finder-sizes{margin-top:14px;padding-top:12px;border-top:1px solid #e2e8f0}\n.tf-finder-sizes h3{font-size:13px;font-weight:700;color:#0f172a;margin:0 0 6px}\n.tf-finder-sizes ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px}\n.tf-finder-sizes li{margin:0}\n.tf-finder-sizes a{display:inline-block;padding:5px 10px;border:1px solid #cbd5e1;border-radius:16px;background:#fff;font-size:13px;color:#0369a1 !important;text-decoration:none !important}\n.tf-finder-sizes a:hover{border-color:#0284c7;background:#f0f9ff}\n.tf-finder-sizes .tf-grp{font-size:12px;color:#64748b;margin:8px 0 4px;font-weight:600}\n.tf-spin{display:inline-block;width:16px;height:16px;border:3px solid #bae6fd;border-top-color:#0284c7;border-radius:50%;vertical-align:-3px;margin-right:6px;animation:tfspin .8s linear infinite}\n@keyframes tfspin{to{transform:rotate(360deg)}}\n.tf-finder button:disabled{opacity:.6;cursor:wait}\n.tf-nores-txt{color:#9a3412;font-weight:600}\n.tf-ov{position:fixed;inset:0;z-index:2147483000;background:rgba(255,255,255,.82);display:flex;align-items:center;justify-content:center}\n.tf-ov-card{background:#fff;border:1px solid #e2e8f0;border-top:4px solid #0284c7;border-radius:8px;box-shadow:0 10px 30px rgba(15,23,42,.15);padding:22px 28px;font-size:16px;font-weight:600;color:#0f172a;text-align:center;max-width:80vw}\n.tf-ov-card .tf-spin{width:34px;height:34px;border-width:4px;display:block;margin:0 auto 12px}\n.tf-near{display:flex;gap:10px;align-items:flex-start;margin-top:10px;background:#f0f9ff;border:1px solid #bae6fd;border-left:4px solid #0284c7;border-radius:6px;padding:10px 12px;font-size:14px;color:#0c4a6e}\n.tf-near-ico{font-size:18px;line-height:1.3}\n.tf-nores{background:#fff7ed;border:1px solid #fdba74;border-radius:6px;padding:12px 14px;margin:0 0 14px;font-size:14px;color:#7c2d12}\n.tf-nores a{color:#0284c7 !important;font-weight:700}\n@media (max-width:600px){.tf-finder-in{padding:12px}.tf-finder input{width:100%}.tf-finder-row>div{flex:1 1 45%}.tf-finder button{width:100%}}");
+// 27 Nov 2026 (KMP 1 AZS9-T43): full width, aligned with the filter bar and product grid; sizes beside the form on wide screens.
+TF.css(".tf-finder{width:100%;max-width:none;margin:28px 0 24px;padding:0;box-sizing:border-box;font-family:inherit}\n.tf-finder-in{background:#f8fafc;border:1px solid #e2e8f0;border-top:4px solid #0284c7;border-radius:6px;padding:18px 22px;box-sizing:border-box}\n.tf-finder-guides{margin-top:14px;padding-top:12px;border-top:1px solid #e2e8f0}\n.tf-finder-guides[hidden]{display:none}\n.tf-finder-guides h3{font-size:13px;font-weight:700;color:#0f172a;margin:0 0 6px}\n.tf-finder-guides ul{list-style:none;margin:0;padding:0}\n.tf-finder-guides li{margin:0 0 6px}\n.tf-finder-guides a{color:#0369a1 !important;font-weight:600;font-size:14px;text-decoration:none !important}\n.tf-finder-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:28px;align-items:start}\n.tf-finder-grid .tf-finder-sizes{margin-top:0;padding-top:0;border-top:0}\n@media (max-width:900px){.tf-finder-grid{grid-template-columns:1fr;gap:0}.tf-finder-grid .tf-finder-sizes{margin-top:14px;padding-top:12px;border-top:1px solid #e2e8f0}}\n.tf-finder h2{font-size:17px;margin:0 0 4px;color:#0f172a;font-weight:700}\n.tf-finder p{font-size:13px;color:#475569;margin:0 0 10px;line-height:1.45}\n.tf-finder-row{display:flex;gap:10px;flex-wrap:wrap;align-items:flex-end}\n.tf-finder label{display:block;font-size:11px;font-weight:700;color:#64748b;text-transform:uppercase;margin-bottom:3px}\n.tf-finder input{width:130px;padding:8px;border:1px solid #cbd5e1;border-radius:4px;font-size:14px;color:#1e293b;background:#fff;box-sizing:border-box}\n.tf-finder button{background:#0284c7;color:#fff;border:0;border-radius:4px;padding:9px 16px;font-size:14px;font-weight:600;cursor:pointer}\n.tf-finder button:hover{background:#0369a1}\n.tf-finder-res{margin-top:12px;padding-top:10px;border-top:1px solid #e2e8f0;font-size:14px;color:#0f172a;line-height:1.5}\n.tf-finder-res:empty{display:none}\n.tf-finder-res a{display:inline-block;margin:6px 10px 0 0;padding:7px 12px;border-radius:4px;font-weight:600;font-size:13px;text-decoration:none !important}\n.tf-btn-main{background:#0284c7;color:#fff !important}\n.tf-btn-alt{background:#fff;color:#0284c7 !important;border:2px solid #0284c7;padding:5px 10px !important}\n.tf-finder-sizes{margin-top:14px;padding-top:12px;border-top:1px solid #e2e8f0}\n.tf-finder-sizes h3{font-size:13px;font-weight:700;color:#0f172a;margin:0 0 6px}\n.tf-finder-sizes ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px}\n.tf-finder-sizes li{margin:0}\n.tf-finder-sizes a{display:inline-block;padding:5px 10px;border:1px solid #cbd5e1;border-radius:16px;background:#fff;font-size:13px;color:#0369a1 !important;text-decoration:none !important}\n.tf-finder-sizes a:hover{border-color:#0284c7;background:#f0f9ff}\n.tf-finder-sizes .tf-grp{font-size:12px;color:#64748b;margin:8px 0 4px;font-weight:600}\n.tf-spin{display:inline-block;width:16px;height:16px;border:3px solid #bae6fd;border-top-color:#0284c7;border-radius:50%;vertical-align:-3px;margin-right:6px;animation:tfspin .8s linear infinite}\n@keyframes tfspin{to{transform:rotate(360deg)}}\n.tf-finder button:disabled{opacity:.6;cursor:wait}\n.tf-nores-txt{color:#9a3412;font-weight:600}\n.tf-ov{position:fixed;inset:0;z-index:2147483000;background:rgba(255,255,255,.82);display:flex;align-items:center;justify-content:center}\n.tf-ov-card{background:#fff;border:1px solid #e2e8f0;border-top:4px solid #0284c7;border-radius:8px;box-shadow:0 10px 30px rgba(15,23,42,.15);padding:22px 28px;font-size:16px;font-weight:600;color:#0f172a;text-align:center;max-width:80vw}\n.tf-ov-card .tf-spin{width:34px;height:34px;border-width:4px;display:block;margin:0 auto 12px}\n.tf-near{display:flex;gap:10px;align-items:flex-start;margin-top:10px;background:#f0f9ff;border:1px solid #bae6fd;border-left:4px solid #0284c7;border-radius:6px;padding:10px 12px;font-size:14px;color:#0c4a6e}\n.tf-near-ico{font-size:18px;line-height:1.3}\n.tf-nores{background:#fff7ed;border:1px solid #fdba74;border-radius:6px;padding:12px 14px;margin:0 0 14px;font-size:14px;color:#7c2d12}\n.tf-nores a{color:#0284c7 !important;font-weight:700}\n@media (max-width:600px){.tf-finder-in{padding:12px}.tf-finder input{width:100%}.tf-finder-row>div{flex:1 1 45%}.tf-finder button{width:100%}}");
 (function () {
   var QUOTE = 'https://shop.tekfab.co.uk/roof-lantern-quote-v2';
   var P = '/products/alr-';
@@ -507,6 +508,19 @@ TF.css(".tf-finder{max-width:1200px;margin:16px auto 20px;padding:0 15px;box-siz
   var m = location.pathname.match(/^\/categories\/[^\/]+\/(\d+)\/?$/);
   var page = m && PAGES[m[1]];
   if (!page) { return; }
+
+  // 27 Nov 2026 (KMP 1 AZS9-T43): on phones Zoho sets the category hero to ~750px tall, pushing the
+  // finder and products off the first screen. Cap it and crop the picture to fit.
+  TF.css('@media (max-width:767px){.theme-category-image-description-conatainer{min-height:190px !important;height:190px !important;background-size:cover !important;background-position:center !important}}');
+
+  // Buying guides links. The theme hides the category description (where these normally sit) on phones,
+  // so they are repeated inside the finder panel only when the description is hidden.
+  var GUIDES = [
+    ['/roof-lantern-sizes', 'Roof lantern sizes: how to measure your upstand'],
+    ['/vented-or-fixed-roof-lantern', 'Vented or fixed: which do you need?'],
+    ['/roof-lantern-vs-skylight', "Roof lantern or skylight: what\u2019s the difference?"],
+    ['/lantern-roof', 'Sheerline S1 lantern: specification and options']
+  ];
 
   function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;'); }
   function fmt(mm) { return (mm / 1000).toString() + 'm'; }
@@ -670,25 +684,39 @@ TF.css(".tf-finder{max-width:1200px;margin:16px auto 20px;padding:0 15px;box-siz
 
   function build() {
     if (document.getElementById('tf-finder')) { return true; }
-    var anchor = document.querySelector('.theme-product-category-section');
-    if (!anchor) { return false; }
+    var sec = document.querySelector('.theme-product-category-section');
+    if (!sec) { return false; }
+    var anchor = sec;
     var old = document.getElementById('zoho-mobile-custom-quote-widget');
     if (old) { old.parentNode.removeChild(old); }
     var box = document.createElement('section');
     box.className = 'tf-finder';
     box.id = 'tf-finder';
-    box.innerHTML = '<div class="tf-finder-in">' +
+    box.innerHTML = '<div class="tf-finder-in"><div class="tf-finder-grid"><div class="tf-finder-main">' +
       '<h2>Find your lantern size</h2>' +
       '<p>Enter the <strong>external size of your upstand</strong> (the kerb the lantern sits on), width first. We’ll show you the nearest listed size, or you can get a quote for your exact size.</p>' +
       '<form class="tf-finder-row" novalidate>' +
         '<div><label for="tf-fw">Width (mm)</label><input id="tf-fw" type="number" inputmode="numeric" min="300" max="8000" step="10" placeholder="e.g. 1000"></div>' +
         '<div><label for="tf-fl">Length (mm)</label><input id="tf-fl" type="number" inputmode="numeric" min="300" max="8000" step="10" placeholder="e.g. 2000"></div>' +
         '<div><button type="submit">Find my size</button></div>' +
-      '</form>' +
+      '</form></div>' +
       sizesHtml() +
-      '<div class="tf-finder-res" aria-live="polite"></div>' +
+      '</div><div class="tf-finder-res" aria-live="polite"></div>' +
+      '<nav class="tf-finder-guides" aria-label="Buying guides" hidden><h3>Buying guides</h3><ul>' +
+        GUIDES.map(function (g) { return '<li><a href="' + g[0] + '">' + esc(g[1]) + '</a></li>'; }).join('') +
+      '</ul></nav>' +
       '</div>';
     anchor.parentNode.insertBefore(box, anchor);
+    // Line up with the filter bar and product grid: copy the side padding of the category container.
+    var zc = sec.querySelector('.zpcontainer');
+    if (zc) { var cs = getComputedStyle(zc); box.style.paddingLeft = cs.paddingLeft; box.style.paddingRight = cs.paddingRight; }
+    var guides = box.querySelector('.tf-finder-guides');
+    var showGuides = function () {
+      var d = document.querySelector('.theme-category-desc');
+      guides.hidden = !(d && getComputedStyle(d).display === 'none');
+    };
+    showGuides();
+    window.addEventListener('resize', showGuides);
     var form = box.querySelector('form'), res = box.querySelector('.tf-finder-res');
     options('Width'); options('Length');
     setTimeout(function () { options('Width'); options('Length'); }, 1500);

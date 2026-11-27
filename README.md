@@ -20,7 +20,7 @@ Rule: this repo holds only what GitHub serves itself. Anything pasted into Zoho 
 | `src/30-size-notice-box.js` | On lantern product pages, adds the "Need a different size?" box, with a "Get a Custom Quote" button that opens the quote form pre-filled with the listing's width and length. |
 | `src/40-trust-box.js` | On lantern product pages, adds the reassurance box under the price and hides the empty coupons and ratings sections. |
 | `src/45-basket-checkout.js` | On the basket, adds the reassurance box and a quote link under Checkout. At checkout, hides the coupon code box (no codes in use). |
-| `src/55-size-finder.js` | On the four lantern category pages, adds the "Find your lantern size" box (nearest listed size via the existing filters, or a pre-filled quote) and crawlable "Common sizes" links. Replaces the older mobile quote box there. |
+| `src/55-size-finder.js` | On the four lantern category pages, adds the "Find your lantern size" box (nearest listed size via the existing filters, or a pre-filled quote) and crawlable "Common sizes" links. Replaces the older mobile quote box there. Full width, lined up with the filter bar (sizes beside the form on wide screens); on phones it also caps the category hero at 190px and shows a "Buying guides" list when the theme hides the category description (27 Nov 2026). |
 | `src/60-guide-pages.js` | Styles for the buying-guide pages and homepage intro block (classes starting `tfg-`). The content is real HTML in each page's code snippet (source: `tekfab-website-code/zoho/pages/`); this file only styles it. |
 | `src/50-category-roof-lanterns.js` | On the Roof Lanterns category page, adds the SEO section (intro, benefits, sizes, FAQ) under the products and FAQ structured data. |
 
