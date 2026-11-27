@@ -1,5 +1,6 @@
 # TekFab shop uptime check – see uptime/check-shop.mjs.
-# Runs every 3 hours, day and night, and can be started by hand (or by Claude) straight after a publish.
+# Runs every 3 hours, day and night, whenever the check itself changes, and can be started by hand (or by
+# Claude) straight after a publish.
 # If any page is down the run fails and GitHub emails Keith. Results are appended to uptime/log.csv on the
 # separate "uptime-log" branch, so the log never touches the live site.js on main.
 name: Shop uptime check
@@ -7,6 +8,9 @@ name: Shop uptime check
 on:
   schedule:
     - cron: '17 */3 * * *'   # 00:17, 03:17, 06:17 … UTC (GitHub may start it a few minutes late)
+  push:                        # also runs when the check itself is changed
+    branches: [main]
+    paths: ['uptime/**', '.github/workflows/uptime.yml']
   workflow_dispatch:
     inputs:
       reason:
