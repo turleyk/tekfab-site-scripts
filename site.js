@@ -1,4 +1,4 @@
-/* TekFab site scripts for shop.tekfab.co.uk. Built 2026-11-27T16:50Z from src/. Do not edit site.js directly. */
+/* TekFab site scripts for shop.tekfab.co.uk. Built 2026-11-27T17:27Z from src/. Do not edit site.js directly. */
 (function () {
 
 // TekFab site scripts core helpers. Loaded from Zoho Commerce Header Code via GitHub Pages.
@@ -600,6 +600,14 @@ TF.css(".tf-finder{width:100%;max-width:none;margin:28px 0 24px;padding:0;box-si
     ov = null;
   }
 
+  // GA4 events (KMP 4 A21Y-T40, 27 Nov 2026) to measure finder use for the basket review:
+  // size_finder_search on every search, size_finder_result with result = exact | nearest | not_listed |
+  // pyramid_not_square | no_sizes | error. Sends nothing if GA4 isn't on the page.
+  function track(name, params) {
+    try { if (typeof window.gtag === 'function') { window.gtag('event', name, params); } } catch (e) {}
+  }
+  function result(kind, w, l) { track('size_finder_result', { result: kind, lantern_style: page.style, finder_width: w, finder_length: l }); }
+
   var busy = false;
   function find(w, l, out, btn) {
     if (busy) { return; }
@@ -613,6 +621,7 @@ TF.css(".tf-finder{width:100%;max-width:none;margin:28px 0 24px;padding:0;box-si
     if (page.style === 'pyramid') {
       if (Math.abs(w - l) > 150) {
         out.innerHTML = 'Pyramid lanterns are square. For a rectangular opening, see our <a class="tf-btn-main" href="/categories/ridged-lanterns/1565765000052482103">ridged lanterns</a>' + q;
+        result('pyramid_not_square', w, l);
         return;
       }
       if (!Object.keys(L).length) { L = W; }
@@ -620,6 +629,7 @@ TF.css(".tf-finder{width:100%;max-width:none;margin:28px 0 24px;padding:0;box-si
     var nw = nearest(W, w), nl = nearest(L, l);
     if (nw === null || nl === null) {
       out.innerHTML = 'Every lantern is made to order, so we can price your exact size.<br>' + q;
+      result('no_sizes', w, l);
       return;
     }
     var exact = nw === w && nl === l, size = fmt(nw) + ' x ' + fmt(nl);
@@ -635,6 +645,7 @@ TF.css(".tf-finder{width:100%;max-width:none;margin:28px 0 24px;padding:0;box-si
     var ids = W === L ? [W[nw]] : [W[nw], L[nl]];
     applyFilters(ids).then(function () {
       var n = productCount();
+      result(n > 0 ? (exact ? 'exact' : 'nearest') : 'not_listed', w, l);
       if (n > 0) {
         var shown = 'Showing <strong>' + n + '</strong> lantern' + (n > 1 ? 's' : '') + ' at <strong>' + size + '</strong>';
         out.innerHTML = exact
@@ -657,6 +668,7 @@ TF.css(".tf-finder{width:100%;max-width:none;margin:28px 0 24px;padding:0;box-si
       }
     }).catch(function () {
       out.innerHTML = 'Something went wrong. Use the filters below, or get a quote.<br>' + q;
+      result('error', w, l);
     }).then(function () { uncover(); busy = false; btn.disabled = false; });
   }
 
@@ -719,7 +731,9 @@ TF.css(".tf-finder{width:100%;max-width:none;margin:28px 0 24px;padding:0;box-si
     }
     form.addEventListener('submit', function (ev) {
       ev.preventDefault();
-      find(Math.round(+box.querySelector('#tf-fw').value), Math.round(+box.querySelector('#tf-fl').value), res, form.querySelector('button'));
+      var fw = Math.round(+box.querySelector('#tf-fw').value), fl = Math.round(+box.querySelector('#tf-fl').value);
+      track('size_finder_search', { lantern_style: page.style, finder_width: fw, finder_length: fl });
+      find(fw, fl, res, form.querySelector('button'));
     });
     return true;
   }
