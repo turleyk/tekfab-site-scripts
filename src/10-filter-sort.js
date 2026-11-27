@@ -25,8 +25,9 @@ let defaultValueElement = wrapper.closest("[data-zs-filter-option-default-value-
 let totalOptions = sortedContainers.length;
 if (defaultValueElement) {
 let maxVisibleOptions = parseInt(defaultValueElement.getAttribute("data-zs-filter-option-default-value-to-show"), 10) || 0;
-sortedContainers.forEach((container, index) => {
-if (index < maxVisibleOptions && maxVisibleOptions < totalOptions) {
+// sortedContainers runs largest first; show the smallest N, the same as Zoho's own "Show less".
+sortedContainers.slice().reverse().forEach((container, index) => {
+if (maxVisibleOptions > 0 && index >= maxVisibleOptions && maxVisibleOptions < totalOptions) {
 container.style.display = "none";
 } else {
 container.style.display = "flex";
