@@ -1,4 +1,4 @@
-// Source: tekfab-website-code/header/02-filter-sort-numeric.html
+// Sorts numeric filter options (e.g. Width, Length) in number order on category pages. Originally a Zoho Header Code snippet.
 function reorderByNumericValue() {
 let wrappers = document.querySelectorAll("[data-zs-filter-option-values-wrapper]");
 wrappers.forEach(wrapper => {

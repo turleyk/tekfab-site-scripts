@@ -1,4 +1,4 @@
-// Source: tekfab-website-code/header/05-trust-box.html
+// Lantern product pages: reassurance box under the price; hides empty coupon and ratings sections. Originally a Zoho Header Code snippet.
 TF.css(".tf-trust-box{border:1px solid #e2e8f0;border-radius:8px;background:#fff;padding:12px 16px;margin:4px 0 16px 0;font-family:inherit}\n.tf-trust-box ul{list-style:none;margin:0;padding:0}\n.tf-trust-box li{display:flex;gap:8px;align-items:flex-start;font-size:13px;line-height:1.4;color:#1e293b;padding:4px 0}\n.tf-trust-box li span.tf-tick{color:#16a34a;font-weight:700;flex:0 0 auto}\n.tf-trust-box small{display:block;color:#64748b;font-size:11px;margin-top:1px}\n.tf-trust-box a{color:#0284c7 !important;text-decoration:none !important;font-weight:600}\n@media (max-width:600px){.tf-trust-box{padding:10px 12px}.tf-trust-box li{font-size:12px}}");
 (function () {
   var LANTERN_SLUGS = ['ridged-aluminium-lantern-roof', 'single-vented-aluminium-lantern-roof',
