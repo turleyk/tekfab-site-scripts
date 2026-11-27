@@ -59,7 +59,7 @@ TF.css(".tf-cat-seo{max-width:1100px;margin:40px auto 24px;padding:0 20px;font-f
     document.head.appendChild(s);
   }
 
-  function isPage() { return /^\/categories\/roof-lanterns\/1565765000030904207\/?$/.test(window.location.pathname); }
+  function isPage() { return /^\/categories\/(roof-lanterns\/1565765000030904207|1565765000030904207\/roof-lanterns)\/?$/.test(window.location.pathname); }
 
   function run() {
     if (!isPage() || document.getElementById('tf-cat-seo')) { return; }

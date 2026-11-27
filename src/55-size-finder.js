@@ -58,8 +58,9 @@ TF.css(".tf-finder{width:100%;max-width:none;margin:28px 0 24px;padding:0;box-si
     ] }
   };
 
-  var m = location.pathname.match(/^\/categories\/[^\/]+\/(\d+)\/?$/);
-  var page = m && PAGES[m[1]];
+  // Zoho serves a category at /categories/<slug>/<id> and also /categories/<id>/<slug> (used by some homepage tiles).
+  var m = location.pathname.match(/^\/categories\/(?:[^\/]+\/(\d+)|(\d+)\/[^\/]+)\/?$/);
+  var page = m && PAGES[m[1] || m[2]];
   if (!page) { return; }
 
   // 27 Nov 2026 (KMP 1 AZS9-T43): on phones Zoho sets the category hero to ~750px tall, pushing the

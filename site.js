@@ -1,4 +1,4 @@
-/* TekFab site scripts for shop.tekfab.co.uk. Built 2026-11-27T14:18Z from src/. Do not edit site.js directly. */
+/* TekFab site scripts for shop.tekfab.co.uk. Built 2026-11-27T14:31Z from src/. Do not edit site.js directly. */
 (function () {
 
 // TekFab site scripts core helpers. Loaded from Zoho Commerce Header Code via GitHub Pages.
@@ -426,7 +426,7 @@ TF.css(".tf-cat-seo{max-width:1100px;margin:40px auto 24px;padding:0 20px;font-f
     document.head.appendChild(s);
   }
 
-  function isPage() { return /^\/categories\/roof-lanterns\/1565765000030904207\/?$/.test(window.location.pathname); }
+  function isPage() { return /^\/categories\/(roof-lanterns\/1565765000030904207|1565765000030904207\/roof-lanterns)\/?$/.test(window.location.pathname); }
 
   function run() {
     if (!isPage() || document.getElementById('tf-cat-seo')) { return; }
@@ -505,8 +505,9 @@ TF.css(".tf-finder{width:100%;max-width:none;margin:28px 0 24px;padding:0;box-si
     ] }
   };
 
-  var m = location.pathname.match(/^\/categories\/[^\/]+\/(\d+)\/?$/);
-  var page = m && PAGES[m[1]];
+  // Zoho serves a category at /categories/<slug>/<id> and also /categories/<id>/<slug> (used by some homepage tiles).
+  var m = location.pathname.match(/^\/categories\/(?:[^\/]+\/(\d+)|(\d+)\/[^\/]+)\/?$/);
+  var page = m && PAGES[m[1] || m[2]];
   if (!page) { return; }
 
   // 27 Nov 2026 (KMP 1 AZS9-T43): on phones Zoho sets the category hero to ~750px tall, pushing the
