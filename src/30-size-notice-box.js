@@ -21,35 +21,35 @@ return; // Exit immediately for non-lantern products (e.g. rain sensors, accesso
 
 // DEFAULT FALLBACK VALUES
 var targetUrl = "https://shop.tekfab.co.uk/categories/roof-lanterns/1565765000030904207";
-var buttonText = "Filter All Roof Lantern Sizes →";
+var buttonText = "Find Your Lantern Size →";
 var styleName = "Roof Lantern";
 var styleDesc = "<strong>Quick Style Guide:</strong> Ridged lanterns are rectangular, Pyramids are square, and Vented options add electric opening vents for airflow.";
 
 // ROUTE 1: Ridged Lanterns
 if (currentPath.includes("ridged-aluminium-lantern-roof")) {
 targetUrl = "https://shop.tekfab.co.uk/categories/ridged-lanterns/1565765000052482103";
-buttonText = "Filter All Ridged Lantern Sizes →";
+buttonText = "Find Your Ridged Lantern Size →";
 styleName = "Ridged Lanterns";
 styleDesc = "<strong>Ridged Style:</strong> Designed for standard rectangular roof openings (not square).";
 }
 // ROUTE 2: Single Vented Lanterns
 else if (currentPath.includes("single-vented-aluminium-lantern-roof")) {
 targetUrl = "https://shop.tekfab.co.uk/categories/vented-roof-lanterns/1565765000052482117?pf=32328000003634033_Type_Single_Vented_Aluminium_Lantern_Roof";
-buttonText = "Filter All Single Vented Sizes →";
+buttonText = "Find Your Single Vented Size →";
 styleName = "Vented Lanterns (Single)";
 styleDesc = "<strong>Vented Style:</strong> Standard rectangular ridged lantern equipped with 1 electric opening vent for ventilation.";
 }
 // ROUTE 3: Double Vented Lanterns
 else if (currentPath.includes("double-vented-aluminium-lantern-roof")) {
 targetUrl = "https://shop.tekfab.co.uk/categories/vented-roof-lanterns/1565765000052482117?pf=32328000003634033_Type_Double_Vented_Aluminium_Lantern_Roof";
-buttonText = "Filter All Double Vented Sizes →";
+buttonText = "Find Your Double Vented Size →";
 styleName = "Vented Lanterns (Double)";
 styleDesc = "<strong>Vented Style:</strong> Standard rectangular ridged lantern equipped with 2 electric opening vents for maximum ventilation.";
 }
 // ROUTE 4: Pyramid Lanterns
 else if (currentPath.includes("pyramid-aluminium-lantern-roof")) {
 targetUrl = "https://shop.tekfab.co.uk/categories/pyramid-lanterns/1565765000052482061";
-buttonText = "Filter All Pyramid Lantern Sizes →";
+buttonText = "Find Your Pyramid Lantern Size →";
 styleName = "Pyramid Lanterns";
 styleDesc = "<strong>Pyramid Style:</strong> Designed specifically for perfectly square roof openings (equal length and width).";
 }
@@ -74,7 +74,7 @@ var bannerHTML = `
 <span>📐</span> Need a different size for your roof opening?
 </div>
 <div class="size-notice-desc">
-This listing is for a specific set dimension. Filter all available standard sizes by your exact width & length on our main catalog page.
+This listing is for one set size. Enter your upstand width and length in the size finder on the category page to see the nearest listed size.
 </div>
 
 <!-- Quick Style Guide Callout -->
