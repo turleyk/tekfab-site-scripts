@@ -1,0 +1,59 @@
+# TekFab shop uptime check – see uptime/check-shop.mjs.
+# Runs every 3 hours, day and night, and can be started by hand (or by Claude) straight after a publish.
+# If any page is down the run fails and GitHub emails Keith. Results are appended to uptime/log.csv on the
+# separate "uptime-log" branch, so the log never touches the live site.js on main.
+name: Shop uptime check
+
+on:
+  schedule:
+    - cron: '17 */3 * * *'   # 00:17, 03:17, 06:17 … UTC (GitHub may start it a few minutes late)
+  workflow_dispatch:
+    inputs:
+      reason:
+        description: 'Why this run (e.g. "after publish of /lantern-roof")'
+        required: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: uptime-check
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Get the uptime log
+        run: |
+          if git fetch --depth=1 origin uptime-log 2>/dev/null; then
+            git show origin/uptime-log:uptime/log.csv > "$RUNNER_TEMP/log.csv" || true
+          fi
+
+      - name: Check the shop
+        id: check
+        run: |
+          [ -n "${{ inputs.reason }}" ] && echo "Reason: ${{ inputs.reason }}"
+          node uptime/check-shop.mjs --log "$RUNNER_TEMP/log.csv"
+
+      - name: Save the result to the uptime-log branch
+        if: always() && steps.check.outcome != 'skipped'
+        run: |
+          git config user.name  "tekfab-uptime-check"
+          git config user.email "actions@users.noreply.github.com"
+          if git rev-parse -q --verify origin/uptime-log >/dev/null; then
+            git checkout -q -B uptime-log origin/uptime-log
+          else
+            git checkout -q --orphan uptime-log && git rm -rq --cached . && git clean -fdq
+          fi
+          mkdir -p uptime && cp "$RUNNER_TEMP/log.csv" uptime/log.csv
+          git add uptime/log.csv
+          git commit -qm "Uptime check $(date -u +%Y-%m-%dT%H:%MZ): ${{ steps.check.outcome == 'success' && 'up' || 'DOWN' }}"
+          git push -q origin uptime-log

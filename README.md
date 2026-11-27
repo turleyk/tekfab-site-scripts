@@ -24,6 +24,14 @@ Rule: this repo holds only what GitHub serves itself. Anything pasted into Zoho 
 | `src/60-guide-pages.js` | Styles for the buying-guide pages and homepage intro block (classes starting `tfg-`). The content is real HTML in each page's code snippet (source: `tekfab-website-code/zoho/pages/`); this file only styles it. |
 | `src/50-category-roof-lanterns.js` | On the Roof Lanterns category page, adds the SEO section (intro, benefits, sizes, FAQ) under the products and FAQ structured data. |
 
+Uptime check (not part of site.js):
+
+| File | What it does |
+|------|--------------|
+| `uptime/check-shop.mjs` | Checks 20 shop pages (fixed list plus random products from the sitemap), one every 10 s. Fails if any page is down. |
+| `uptime/pages.json` | The fixed pages it always checks, including the top Google Ads products. |
+| `.github/workflows/uptime.yml` | Runs the check every 3 hours and on demand; GitHub emails Keith if it fails. Results go to `uptime/log.csv` on the `uptime-log` branch. |
+
 To change something, edit the file in `src/`, run `./build.sh`, and commit both `src/` and `site.js`.
 
 These stay pasted directly in Zoho Header Code, not here:

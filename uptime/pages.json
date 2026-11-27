@@ -1,0 +1,18 @@
+{
+  "about": "Fixed pages checked by check-shop.mjs every run. The rest of the 20 are random product pages from the store sitemap. Update the top products when the Google Ads leaders change.",
+  "total_pages": 20,
+  "pages": [
+    { "name": "Homepage", "path": "/", "type": "page" },
+    { "name": "Roof Lantern Quote form", "path": "/roof-lantern-quote-v2", "type": "page" },
+    { "name": "Roof Lantern Sizes guide", "path": "/roof-lantern-sizes", "type": "page" },
+    { "name": "Category: Roof Lanterns", "path": "/categories/roof-lanterns/1565765000030904207", "type": "category" },
+    { "name": "Category: Ridged Lanterns", "path": "/categories/ridged-lanterns/1565765000052482103", "type": "category" },
+    { "name": "Category: Pyramid Lanterns", "path": "/categories/pyramid-lanterns/1565765000052482061", "type": "category" },
+    { "name": "Category: Vented Roof Lanterns", "path": "/categories/vented-roof-lanterns/1565765000052482117", "type": "category" },
+    { "name": "Top ad: Ridged 1m x 2m 4-pane", "path": "/products/alr-ridged-aluminium-lantern-roof-1m-x-2m-2way-4-pane/1565765000051459923", "type": "product" },
+    { "name": "Top ad: Ridged 1m x 2m 6-pane", "path": "/products/alr-ridged-aluminium-lantern-roof-1m-x-2m-2way-6-pane/1565765000051469003", "type": "product" },
+    { "name": "Top ad: Ridged 0.6m x 2m 4-pane", "path": "/products/alr-ridged-aluminium-lantern-roof-0-6m-x-2m-2way-4-pane/1565765000051697077", "type": "product" },
+    { "name": "Product: Ridged 1m x 1.5m", "path": "/products/ridged-lantern-roof-1m-x-1-5m/1565765000030904221", "type": "product" },
+    { "name": "Product: Pyramid 2.3m x 2.3m", "path": "/products/alr-pyramid-aluminium-lantern-roof-2-3m-x-2-3m-4way-4-pane/1565765000051459623", "type": "product" }
+  ]
+}
