@@ -12,7 +12,9 @@
 //   - a few product pages picked at random from the store sitemap, so over time the whole range is sampled
 // A page passes if it returns HTTP 200, is a real-sized page, and is not Zoho's "page not found" screen.
 // A page that fails is tried once more after 60 seconds before it counts as down (to ignore blips).
-// Exit code 1 if anything is down – GitHub then emails Keith. Nothing else ever alerts.
+// Exit code 1 (GitHub then emails Keith) if any fixed page is down, the sitemap is missing, or two or more
+// random products are down. One random product down on its own is only a warning in the log: the sitemap
+// can still list a deleted product. Nothing else ever alerts.
 //
 // It downloads the HTML only and runs no page scripts, so Google Analytics and Google Ads never see it.
 // It identifies itself as "TekFab-uptime-check".
@@ -99,18 +101,20 @@ for (const [i, page] of pages.entries()) {
     why = second ? `${second} (failed twice, 60 s apart)` : null;
   }
   console.log(`${why ? 'DOWN' : 'ok  '}  ${page.name.padEnd(34)} ${page.path}${why ? '  – ' + why : ''}`);
-  if (why) failures.push({ ...page, why });
+  if (why) failures.push({ ...page, why, random: page.name === 'Random product' });
   if (i < pages.length - 1) await sleep(GAP_MS);
 }
 
-const ok = failures.length === 0;
+const randomDown = failures.filter((f) => f.random).length;
+const ok = failures.length - randomDown === 0 && randomDown < 2;
+const result = ok ? (failures.length ? 'warning' : 'up') : 'down';
 const checked = pages.length + 1; // + the sitemap
-console.log(`\n${ok ? 'SHOP UP' : 'SHOP PROBLEM'}: ${checked - failures.length}/${checked} OK at ${started.toISOString()}${note ? ' – ' + note : ''}`);
+console.log(`\n${ok ? (failures.length ? 'SHOP UP (warning: one random product missing – stale sitemap entry?)' : 'SHOP UP') : 'SHOP PROBLEM'}: ${checked - failures.length}/${checked} OK at ${started.toISOString()}${note ? ' – ' + note : ''}`);
 
 if (logFile) {
   if (!existsSync(logFile)) writeFileSync(logFile, 'checked_at_utc,result,pages_checked,pages_down,down_pages\n');
   const down = failures.map((f) => `${f.path} (${f.why})`).join(' | ').replace(/"/g, "'");
-  appendFileSync(logFile, `${started.toISOString()},${ok ? 'up' : 'down'},${checked},${failures.length},"${down}"\n`);
+  appendFileSync(logFile, `${started.toISOString()},${result},${checked},${failures.length},"${down}"\n`);
 }
 
 if (!ok) {

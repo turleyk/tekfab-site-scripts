@@ -59,5 +59,5 @@ jobs:
           fi
           mkdir -p uptime && cp "$RUNNER_TEMP/log.csv" uptime/log.csv
           git add uptime/log.csv
-          git commit -qm "Uptime check $(date -u +%Y-%m-%dT%H:%MZ): ${{ steps.check.outcome == 'success' && 'up' || 'DOWN' }}"
+          git commit -qm "Uptime check $(date -u +%Y-%m-%dT%H:%MZ): ${{ steps.check.outcome == 'success' && 'ok' || 'DOWN' }}"
           git push -q origin uptime-log
